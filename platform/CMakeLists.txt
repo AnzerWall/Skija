@@ -56,6 +56,8 @@ if(APPLE)
     set_target_properties(skija PROPERTIES OUTPUT_NAME "skija_${SKIA_ARCH}")
 
 elseif(UNIX)
+    set(CMAKE_C_COMPILER clang)
+    set(CMAKE_CXX_COMPILER clang++)
     target_include_directories(skija PRIVATE $ENV{JAVA_HOME}/include $ENV{JAVA_HOME}/include/linux)
 
 elseif(WIN32)
